@@ -1,6 +1,6 @@
 {
   "name": "cutest",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "cssinjss",
   "jsnext:main": "dist/cutest.es.js",
   "module": "dist/cutest.es.js",
