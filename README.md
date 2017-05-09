@@ -19,7 +19,7 @@ npm install -S restyles
 ```
 
 ## Basic Usage
-```jsx harmony
+```jsx
 const Profile = (props) => (
   <Style
     css={{
@@ -53,7 +53,7 @@ Your css as an object. This is passed straight through to glamor.
 
 *[glamor css docs](https://github.com/threepointone/glamor/blob/master/docs/api.md#cssrules)*
 
-```jsx harmony
+```jsx
 const Profile = (props) => (
   <Style
     css={{
