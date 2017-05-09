@@ -1,125 +1,120 @@
+# restyles
 
+Write your styles scoped to your component and use standard css selectors to target children.
 
-# Holen
-Declarative fetch in React
+*This is a thin wrapper around [glamor](https://github.com/threepointone/glamor).*
 
-[![npm version](https://badge.fury.io/js/holen.svg)](https://badge.fury.io/js/holen)
-[![Build Status](https://travis-ci.org/tkh44/holen.svg?branch=master)](https://travis-ci.org/tkh44/holen)
-[![codecov](https://codecov.io/gh/tkh44/holen/branch/master/graph/badge.svg)](https://codecov.io/gh/tkh44/holen)
+[![npm version](https://badge.fury.io/js/restyles.svg)](https://badge.fury.io/js/restyles)
+[![Build Status](https://travis-ci.org/tkh44/restyles.svg?branch=master)](https://travis-ci.org/tkh44/restyles)
+[![codecov](https://codecov.io/gh/tkh44/restyles/branch/master/graph/badge.svg)](https://codecov.io/gh/tkh44/restyles)
 
 -   [Install](#install)
 -   [Basic Usage](#basic-usage)
+-   [Props](#props)
 
 ## Install
 
 ```bash
-npm install -S holen
+npm install -S restyles
 ```
 
 ## Basic Usage
-```jsx
-// Fetch on mount
-<Holen url="api.startup.com/users">
-  {({data}) => <pre>{JSON.stringify(data, null, 2)}</pre>}
-</Holen>
-
-// Lazy fetch
-<Holen lazy onResponse={handleResponse} url="api.startup.com/users">
-  {({data, fetch}) => (
-    <div>
-      <button onClick={fetch}>Load Data</button>
-      <pre>{JSON.stringify(data, null, 2)}</pre>
-    </div>
-  )}
-</Holen>
+```jsx harmony
+const Profile = (props) => (
+  <Style
+    css={{
+      color: 'blue',
+      '&:hover': {
+        color: 'red'
+      },
+      '& .profile': {
+        color: props.online ? 'green' : 'gray',
+        fontSize: 20
+      }
+    }}
+  >
+    {rules => (
+      <div {...rules}>
+        This will be blue until hovered.
+        <div className="profile">
+          This font size will be 20px
+        </div>
+      </div>
+    )}
+  </Style>
+)
 ```
 
 ## Props
 
-**body** `any`
+**css** `object|array<object>`
 
-```jsx
-<Holen 
-  body={JSON.stringify({ message: 'hello' })}
-  method="POST"
-  url="api.startup.com/users"
->
-  {({data}) => <pre>{JSON.stringify(data, null, 2)}</pre>}
-</Holen>
+Your css as an object. This is passed straight through to glamor.
+
+*[glamor css docs](https://github.com/threepointone/glamor/blob/master/docs/api.md#cssrules)*
+
+```jsx harmony
+const Profile = (props) => (
+  <Style
+    css={{
+     color: 'blue',
+     '& .profile': {
+       color: 'red',
+       '& .username': {
+         color: 'green',
+         '& .three': {
+           color: 'gray',
+           '& .inner': {
+             color: 'rebeccapurple',
+             fontSize: 20
+           }
+         }
+       }
+     },
+     '&:hover': {
+       '& .three': {
+         color: 'black'
+       }
+     },
+     '&:active': {
+       '& .inner': {
+         color: 'purple',
+         fontSize: 20
+       }
+     },
+     '&:before': {
+       content: '" "',
+       position: 'absolute',
+       top: 0,
+       left: 0,
+       width: '100%',
+       height: '100%',
+       backgroundColor: 'blue'
+     },
+     '@media (min-width: 500px) and (orientation: landscape)': {
+       '& .inner': {
+         color: 'purple',
+         fontSize: 48
+       }
+     }
+   }}
+  >
+    {rules => (
+      <div {...rules}>
+        blue
+        <div className={'profile'}>
+          red
+          <div className={'username'}>
+            green
+            <div className={'three'}>
+              <span className={'inner'}>test</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    )}
+  </Style>
+)
 ```
 
-*[MDN - Body](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#Body)*
 
-**children** `function`
-
-Children is a function that receives an object as its only argument.
-
-The object contains the following keys:
-
-- fetching: `bool`
-- response: `object`
-- data: `object`
-- error: `object`
-- fetch: `function`
-
-```jsx
-<Holen url="api.startup.com/users">
-  {({data}) => <div>{data.name}</div>}
-</Holen>
-```
-
-**credentials** `string`
-
-*[MDN - Credentials](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#Sending_a_request_with_credentials_included)*
-
-**headers** `string`
-
-*[MDN - Headers](https://developer.mozilla.org/en-US/docs/Web/API/Fetch_API/Using_Fetch#Headers)*
-
-
-**lazy** `boolean`
-
-If true then the component will **not** perform the fetch on mount. 
-You must use the `fetch` named argument in order to initiate the request.
-
-```jsx
-<Holen lazy url="api.startup.com/users">
-  {({fetching}) => {fetching && <div>Loading</div>}} // renders nothing, fetch was not started
-</Holen>
-```
-
-**method** `string` - *default `GET`*
-
-*[MDN - Method](https://developer.mozilla.org/en-US/docs/Web/API/Request/method)*
-
-
-**onResponse** `function`
-
-callback called on the response.
-
-```jsx
-const handleResponse = (error, response) => {
-  if (error || !response.ok) {
-    panic()
-  }
-  
-  cheer()
-}
-
-<Holen 
-  lazy
-  onResponse={handleResponse}
-  url="api.startup.com/users">
-  {({ data, fetch }) => (
-    <div>
-      <button onClick={fetch}>Load Data</button>
-      <pre>{JSON.stringify(data, null , 2)}</pre>
-    </div>
-  )}
-    
-</Holen>
-```
-
-**url** `string`
-
-url of the request.

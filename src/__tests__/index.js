@@ -4,6 +4,38 @@ import renderer from 'react-test-renderer'
 import Style from '../index'
 
 describe('cutest', () => {
+  test('renders simple', () => {
+    const props = { online: true }
+    const tree = renderer
+      .create(
+        <Style
+          css={{
+            color: 'blue',
+            '&:hover': {
+              color: 'red'
+            },
+            '& .profile': {
+              color: props.online ? 'green' : 'gray',
+              fontSize: 20
+            }
+          }}
+        >
+          {rules => (
+            <div {...rules}>
+              This will be blue until hovered.
+              <div className="profile">
+                This font size will be 20px
+              </div>
+            </div>
+          )}
+        </Style>
+      )
+      .toJSON()
+
+    expect(tree).toMatchSnapshot()
+  })
+
+
   test('renders crazy stuff', () => {
     const tree = renderer
       .create(
