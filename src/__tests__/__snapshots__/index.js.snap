@@ -1,0 +1,52 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`cutest renders crazy stuff 1`] = `
+<div
+  data-css-oypqrq=""
+>
+  blue
+  <div
+    className="profile"
+  >
+    red
+    <div
+      className="username"
+    >
+      green
+      <div
+        className="three"
+      >
+        <span
+          className="inner"
+        >
+          test
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`cutest use glamor helpers 1`] = `
+<div
+  data-css-snd14h=""
+>
+  <div
+    className="one"
+  >
+    <div
+      className="two"
+    >
+      <div
+        className="three"
+      >
+        <span
+          className="inner"
+        >
+          test
+        </span>
+      </div>
+    </div>
+  </div>
+</div>
+`;
