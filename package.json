@@ -1,11 +1,11 @@
 {
-  "name": "cutest",
+  "name": "restyles",
   "version": "0.0.2",
   "description": "cssinjss",
-  "jsnext:main": "dist/cutest.es.js",
-  "module": "dist/cutest.es.js",
-  "main": "dist/cutest.js",
-  "umd:main": "dist/cutest.umd.js",
+  "jsnext:main": "dist/restyles.es.js",
+  "module": "dist/restyles.es.js",
+  "main": "dist/restyles.js",
+  "umd:main": "dist/restyles.umd.js",
   "files": [
     "dist"
   ],
@@ -52,24 +52,21 @@
     "uglify-js": "^2.8.22"
   },
   "author": "Kye Hohenberger",
-  "homepage": "https://github.com/tkh44/cutest#readme",
+  "homepage": "https://github.com/tkh44/restyles#readme",
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/tkh44/cutest.git"
+    "url": "git+https://github.com/tkh44/restyles.git"
   },
   "directories": {
     "test": "tests"
   },
   "keywords": [
-    "fetch",
+    "styles",
+    "restyles",
     "react",
-    "react-component",
-    "react-fetch",
-    "fetch-component",
-    "preact",
-    "preact-fetch",
-    "cutest"
+    "css",
+    "css-in-js"
   ],
   "eslintConfig": {
     "extends": "standard",
@@ -82,6 +79,6 @@
     ]
   },
   "bugs": {
-    "url": "https://github.com/tkh44/cutest/issues"
+    "url": "https://github.com/tkh44/restyles/issues"
   }
 }
