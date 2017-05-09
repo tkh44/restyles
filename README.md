@@ -33,8 +33,8 @@ const Profile = (props) => (
       }
     }}
   >
-    {rules => (
-      <div {...rules}>
+    {cls => (
+      <div className={cls}>
         This will be blue until hovered.
         <div className="profile">
           This font size will be 20px
@@ -99,8 +99,8 @@ const Profile = (props) => (
      }
    }}
   >
-    {rules => (
-      <div {...rules}>
+    {cls => (
+      <div className={cls}>
         blue
         <div className={'profile'}>
           red
