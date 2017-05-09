@@ -1,6 +1,6 @@
 # restyles
 
-Write your styles scoped to your component and use standard css selectors to target children.
+Write styles scoped to your component and use standard css selectors to target children.
 
 *This is a thin wrapper around [glamor](https://github.com/threepointone/glamor).*
 
