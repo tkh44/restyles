@@ -27,6 +27,19 @@ exports[`cutest renders crazy stuff 1`] = `
 </div>
 `;
 
+exports[`cutest renders simple 1`] = `
+<div
+  data-css-epkc5v=""
+>
+  This will be blue until hovered.
+  <div
+    className="profile"
+  >
+    This font size will be 20px
+  </div>
+</div>
+`;
+
 exports[`cutest use glamor helpers 1`] = `
 <div
   data-css-snd14h=""
