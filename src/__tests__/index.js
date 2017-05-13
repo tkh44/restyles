@@ -1,199 +1,67 @@
+/* eslint-disable jsx-quotes */
 /* eslint-env jest */
 import React from 'react'
-import renderer from 'react-test-renderer'
-import Style from '../index'
+import renderer from 'react-test-renderer';
+import {matcher, serializer} from 'jest-glamor-react'
+import Style, {css} from '../index'
 
-describe('cutest', () => {
-  test('renders simple', () => {
-    const props = { online: true }
-    const tree = renderer
-      .create(
-        <Style
-          css={{
-            color: 'blue',
-            '&:hover': {
-              color: 'red'
-            },
-            '& .profile': {
-              color: props.online ? 'green' : 'gray',
-              fontSize: 20
-            }
-          }}
-        >
-          {rules => (
-            <div {...rules}>
-              This will be blue until hovered.
-              <div className="profile">
-                This font size will be 20px
-              </div>
-            </div>
-          )}
-        </Style>
-      )
-      .toJSON()
+expect.addSnapshotSerializer(serializer)
+expect.extend(matcher)
 
-    expect(tree).toMatchSnapshot()
+describe('restyles', () => {
+  test('css function', () => {
+    let element = css({ color: 'blue' })
+    const tree = renderer.create(element).toJSON()
+    expect(tree).toMatchSnapshotWithGlamor()
   })
 
+  test('renders elements with styles', () => {
+    const props = {
+      online: true,
+      theme: {radius: 5}
+    }
 
-  test('renders crazy stuff', () => {
     const tree = renderer
       .create(
-        <Style
-          css={{
-            color: 'blue',
+        <Style>
+          {css({
             '& .profile': {
-              color: 'red',
-              '& .username': {
-                color: 'green',
-                '& .three': {
-                  color: 'gray',
-                  '& .inner': {
-                    color: 'rebeccapurple',
-                    fontSize: 20
-                  }
-                }
-              }
-            },
-            '&:hover': {
-              '& .one': {
-                color: 'blue',
-                '& .two': {
-                  color: 'gray',
-                  '& .three': {
-                    color: 'black',
-                    '& .inner': {
-                      color: 'purple',
-                      fontSize: 20
-                    }
-                  }
-                }
-              }
-            },
-            '&:active': {
-              '& .one': {
-                color: 'blue',
-                '& .two': {
-                  color: 'gray',
-                  '& .three': {
-                    color: 'black',
-                    '& .inner': {
-                      color: 'purple',
-                      fontSize: 20
-                    }
-                  }
-                }
-              }
-            },
-            '&:before': {
-              '& .one': {
-                color: 'blue',
-                '& .two': {
-                  color: 'gray',
-                  '& .three': {
-                    color: 'black',
-                    '& .inner': {
-                      color: 'purple',
-                      fontSize: 20
-                    }
-                  }
-                }
-              }
-            },
-            '@media (min-width: 500px) and (orientation: landscape)': {
-              '& .one': {
-                color: 'blue',
-                '& .two': {
-                  color: 'gray',
-                  '& .three': {
-                    color: 'black',
-                    '& .inner': {
-                      color: 'purple',
-                      fontSize: 20
-                    }
-                  }
-                }
-              }
-            }
-          }}
-        >
-          {rules => (
-            <div {...rules}>
-              blue
-              <div className={'profile'}>
-                red
-                <div className={'username'}>
-                  green
-                  <div className={'three'}>
-                    <span className={'inner'}>test</span>
-                  </div>
-                </div>
-              </div>
-            </div>
-          )}
-        </Style>
-      )
-      .toJSON()
-
-    expect(tree).toMatchSnapshot()
-  })
-
-  test('use glamor helpers', () => {
-    const tree = renderer
-      .create(
-        <Style
-          css={[
-            {color: 'lightgray'},
-            {height: '100vh'},
-            {
-              color: 'blue',
+              color: 'green',
+              fontSize: 48,
               '&:hover': {
-                background: 'blue'
+                color: 'blue'
               },
-              '& .one': {
-                color: 'red',
-                '& .two': {
-                  color: 'green',
-                  '& .three': {
-                    color: 'gray',
-                    '& .inner': {
-                      color: 'rebeccapurple',
-                      fontSize: 20
-                    }
-                  }
-                }
+              '& > span': {
+                fontSize: 64,
+                marginLeft: 'auto'
+              }
+            },
+            '& .activity': {
+              color: props.online ? 'green' : 'gray',
+              display: 'flex',
+              '& .moment': {
+                color: 'rebeccapurple',
+                fontSize: 18
+              }
+            },
+            '@media(min-width: 400px)': {
+              '& .moment': {
+                height: 200
               }
             }
-          ]}
-        >
-          {[
-            rules => (
-              <div {...rules}>
-                <div className={'one'}>
-                  <div className={'two'}>
-                    <div className={'three'}>
-                      <span className={'inner'}>test</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ),
-            rules => (
-              <div {...rules}>
-                <div className={'three'}>
-                  <div className={'two'}>
-                    <div className={'one'}>
-                      <span className={'inner'}>test</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )
-          ]}
+          })}
+          <div className="profile">
+            <h1>I'm blue sometimes <span>👾</span></h1>
+          </div>
+          <div className="activity">
+            <div className="moment">Buy Beer</div>
+            <div className="moment">Add Server</div>
+            <div className="moment">Log In</div>
+          </div>
         </Style>
       )
       .toJSON()
 
-    expect(tree).toMatchSnapshot()
+    expect(tree).toMatchSnapshotWithGlamor()
   })
 })

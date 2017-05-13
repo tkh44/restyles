@@ -1,20 +1,23 @@
-import PropTypes from 'prop-types'
-import { css as magic } from 'glamor'
+import React from 'react'
+import {css as magic} from 'glamor'
 
-function childrenToArray (children) {
-  return Array.isArray && Array.isArray(children)
-    ? children
-    : [].concat(children)
+function Ns () {
+  return <noscript />
 }
 
-function renderChildWithCss (renderFn, css) {
-  return renderFn(magic(css))
-}
-export default function Style ({children, css}) {
-  return renderChildWithCss(childrenToArray(children)[0], css)
+export function css (...styles) {
+  return <Ns __css={styles} />
 }
 
-Style.propTypes = {
-  children: PropTypes.oneOfType([PropTypes.func, PropTypes.arrayOf(PropTypes.func)]),
-  css: PropTypes.oneOfType([PropTypes.func, PropTypes.object, PropTypes.array])
+function cloneChildWithClassNames (child, styles) {
+  return React.cloneElement(child, magic(styles))
+}
+
+export default class Style extends React.Component {
+  render () {
+    const {children} = this.props
+    const childrenArray = React.Children.toArray(children)
+    let styles = childrenArray.map(child => child.props.__css)
+    return childrenArray.map(child => cloneChildWithClassNames(child, styles))
+  }
 }
