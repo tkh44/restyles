@@ -25,42 +25,44 @@ npm install -S restyles
 ```jsx
 import Style, {css} from 'restyles'
 
-<Style>
-  {css({
-    '& .profile': {
-      color: 'green',
-      fontSize: 48,
-      '&:hover': {
-        color: 'blue'
+const Profile = (props) => (
+  <Style>
+    {css({
+      '& .profile': {
+        color: 'green',
+        fontSize: 48,
+        '&:hover': {
+          color: 'blue'
+        },
+        '& > span': {
+          fontSize: 64,
+          marginLeft: 'auto'
+        }
       },
-      '& > span': {
-        fontSize: 64,
-        marginLeft: 'auto'
+      '& .activity': {
+        color: props.online ? 'green' : 'gray',
+        display: 'flex',
+        '& .moment': {
+          color: 'rebeccapurple',
+          fontSize: 18
+        }
+      },
+      '@media(min-width: 400px)': {
+        '& .moment': {
+          height: 200
+        }
       }
-    },
-    '& .activity': {
-      color: props.online ? 'green' : 'gray',
-      display: 'flex',
-      '& .moment': {
-        color: 'rebeccapurple',
-        fontSize: 18
-      }
-    },
-    '@media(min-width: 400px)': {
-      '& .moment': {
-        height: 200
-      }
-    }
-  })}
-  <div className="profile">
-    <h1>I'm blue sometimes <span>👾</span></h1>
-  </div>
-  <div className="activity">
-    <div className="moment">Buy Beer</div>
-    <div className="moment">Add Server</div>
-    <div className="moment">Log In</div>
-  </div>
-</Style>
+    })}
+    <div className="profile">
+      <h1>I'm blue sometimes <span>👾</span></h1>
+    </div>
+    <div className="activity">
+      <div className="moment">Buy Beer</div>
+      <div className="moment">Add Server</div>
+      <div className="moment">Log In</div>
+    </div>
+  </Style>
+)
 ```
 
 ## API
