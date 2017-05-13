@@ -44,7 +44,7 @@
     "prop-types": "^15.5.8",
     "raw-loader": "^0.5.1",
     "react": "^16.0.0-alpha.12",
-    "react-addons-test-utils": "^16.0.0-alpha.12",
+    "react-addons-test-utils": "^15.5.1",
     "react-dom": "^16.0.0-alpha.12",
     "react-test-renderer": "^16.0.0-alpha.12",
     "rimraf": "^2.6.1",
