@@ -167,14 +167,14 @@ Generates these styles
 And this markup
 
 ```html
-<div className="profile" data-css-vwt4h7="">
-  <noscript />
+<noscript />
+<div className="profile" data-css-vwt4h7="">  
   <h1>I'm blue sometimes <span>👾</span></h1>
-  <div className="activity" data-css-vwt4h7="">
-    <div className="moment">Buy Beer</div>
-    <div className="moment">Add Server</div>
-    <div className="moment">Log In</div>
-  </div>
+</div>
+<div className="activity" data-css-vwt4h7="">
+  <div className="moment">Buy Beer</div>
+  <div className="moment">Add Server</div>
+  <div className="moment">Log In</div>
 </div>
 
 ```
