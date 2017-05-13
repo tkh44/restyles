@@ -1,65 +1,120 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`cutest renders crazy stuff 1`] = `
-<div
-  data-css-oypqrq=""
->
-  blue
-  <div
-    className="profile"
-  >
-    red
-    <div
-      className="username"
-    >
-      green
-      <div
-        className="three"
-      >
-        <span
-          className="inner"
-        >
-          test
-        </span>
-      </div>
-    </div>
-  </div>
-</div>
-`;
+exports[`restyles css function 1`] = `<noscript />`;
 
-exports[`cutest renders simple 1`] = `
-<div
-  data-css-epkc5v=""
->
-  This will be blue until hovered.
-  <div
-    className="profile"
-  >
-    This font size will be 20px
-  </div>
-</div>
-`;
+exports[`restyles renders elements with styles 1`] = `
+Array [
+  <noscript />,
+  .css-vwt4h7 .profile,
+[data-css-vwt4h7] .profile {
+  color: green;
+  font-size: 48px;
+}
 
-exports[`cutest use glamor helpers 1`] = `
+.css-vwt4h7 .profile:hover,
+[data-css-vwt4h7] .profile:hover {
+  color: blue;
+}
+
+.css-vwt4h7 .profile > span,
+[data-css-vwt4h7] .profile > span {
+  font-size: 64px;
+  margin-left: auto;
+}
+
+.css-vwt4h7 .activity,
+[data-css-vwt4h7] .activity {
+  color: green;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.css-vwt4h7 .activity .moment,
+[data-css-vwt4h7] .activity .moment {
+  color: rebeccapurple;
+  font-size: 18px;
+}
+
+@media (min-width: 400px) {
+  .css-vwt4h7 .moment,
+  [data-css-vwt4h7] .moment {
+    height: 200px;
+  }
+}
+
 <div
-  data-css-snd14h=""
+    className="profile"
+    data-css-vwt4h7=""
 >
-  <div
-    className="one"
-  >
-    <div
-      className="two"
-    >
-      <div
-        className="three"
-      >
-        <span
-          className="inner"
-        >
-          test
+    <h1>
+        I'm blue sometimes 
+        <span>
+            👾
         </span>
-      </div>
+    </h1>
+</div>,
+  .css-vwt4h7 .profile,
+[data-css-vwt4h7] .profile {
+  color: green;
+  font-size: 48px;
+}
+
+.css-vwt4h7 .profile:hover,
+[data-css-vwt4h7] .profile:hover {
+  color: blue;
+}
+
+.css-vwt4h7 .profile > span,
+[data-css-vwt4h7] .profile > span {
+  font-size: 64px;
+  margin-left: auto;
+}
+
+.css-vwt4h7 .activity,
+[data-css-vwt4h7] .activity {
+  color: green;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.css-vwt4h7 .activity .moment,
+[data-css-vwt4h7] .activity .moment {
+  color: rebeccapurple;
+  font-size: 18px;
+}
+
+@media (min-width: 400px) {
+  .css-vwt4h7 .moment,
+  [data-css-vwt4h7] .moment {
+    height: 200px;
+  }
+}
+
+<div
+    className="activity"
+    data-css-vwt4h7=""
+>
+    <div
+        className="moment"
+    >
+        Buy Beer
     </div>
-  </div>
-</div>
+    <div
+        className="moment"
+    >
+        Add Server
+    </div>
+    <div
+        className="moment"
+    >
+        Log In
+    </div>
+</div>,
+]
 `;

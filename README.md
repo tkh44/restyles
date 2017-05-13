@@ -2,6 +2,8 @@
 
 Write styles scoped to your component and use standard css selectors to target children.
 
+**React 16 only**
+
 *This is a thin wrapper around [glamor](https://github.com/threepointone/glamor).*
 
 [![npm version](https://badge.fury.io/js/restyles.svg)](https://badge.fury.io/js/restyles)
@@ -10,7 +12,8 @@ Write styles scoped to your component and use standard css selectors to target c
 
 -   [Install](#install)
 -   [Basic Usage](#basic-usage)
--   [Props](#props)
+-   [API](#api)
+-   [How It Works](#how-it-works)
 
 ## Install
 
@@ -20,101 +23,158 @@ npm install -S restyles
 
 ## Basic Usage
 ```jsx
+import Style, {css} from 'restyles'
+
 const Profile = (props) => (
-  <Style
-    css={{
-      color: 'blue',
-      '&:hover': {
-        color: 'red'
-      },
+  <Style>
+    {css({
       '& .profile': {
+        color: 'green',
+        fontSize: 48,
+        '&:hover': {
+          color: 'blue'
+        },
+        '& > span': {
+          fontSize: 64,
+          marginLeft: 'auto'
+        }
+      },
+      '& .activity': {
         color: props.online ? 'green' : 'gray',
-        fontSize: 20
+        display: 'flex',
+        '& .moment': {
+          color: 'rebeccapurple',
+          fontSize: 18
+        }
+      },
+      '@media(min-width: 400px)': {
+        '& .moment': {
+          height: 200
+        }
       }
-    }}
-  >
-    {cls => (
-      <div className={cls}>
-        This will be blue until hovered.
-        <div className="profile">
-          This font size will be 20px
-        </div>
-      </div>
-    )}
+    })}
+    <div className="profile">
+      <h1>I'm blue sometimes <span>👾</span></h1>
+    </div>
+    <div className="activity">
+      <div className="moment">Buy Beer</div>
+      <div className="moment">Add Server</div>
+      <div className="moment">Log In</div>
+    </div>
   </Style>
 )
 ```
 
-## Props
+## API
 
-**css** `object|array<object>`
+**css** `Function`
 
-Your css as an object. This is passed straight through to glamor.
+Function that takes css as an object (or array of objects). This is passed straight through to glamor.
 
 *[glamor css docs](https://github.com/threepointone/glamor/blob/master/docs/api.md#cssrules)*
 
+
+## Under The Hood
+
+This code
+
 ```jsx
-const Profile = (props) => (
-  <Style
-    css={{
-     color: 'blue',
-     '& .profile': {
-       color: 'red',
-       '& .username': {
-         color: 'green',
-         '& .three': {
-           color: 'gray',
-           '& .inner': {
-             color: 'rebeccapurple',
-             fontSize: 20
-           }
-         }
-       }
-     },
-     '&:hover': {
-       '& .three': {
-         color: 'black'
-       }
-     },
-     '&:active': {
-       '& .inner': {
-         color: 'purple',
-         fontSize: 20
-       }
-     },
-     '&:before': {
-       content: '" "',
-       position: 'absolute',
-       top: 0,
-       left: 0,
-       width: '100%',
-       height: '100%',
-       backgroundColor: 'blue'
-     },
-     '@media (min-width: 500px) and (orientation: landscape)': {
-       '& .inner': {
-         color: 'purple',
-         fontSize: 48
-       }
-     }
-   }}
-  >
-    {cls => (
-      <div className={cls}>
-        blue
-        <div className={'profile'}>
-          red
-          <div className={'username'}>
-            green
-            <div className={'three'}>
-              <span className={'inner'}>test</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    )}
-  </Style>
-)
+import Style, {css} from 'restyles'
+
+<Style>
+  {css({
+    '& .profile': {
+      color: 'green',
+      fontSize: 48,
+      '&:hover': {
+        color: 'blue'
+      },
+      '& > span': {
+        fontSize: 64,
+        marginLeft: 'auto'
+      }
+    },
+    '& .activity': {
+      color: props.online ? 'green' : 'gray',
+      display: 'flex',
+      '& .moment': {
+        color: 'rebeccapurple',
+        fontSize: 18
+      }
+    },
+    '@media(min-width: 400px)': {
+      '& .moment': {
+        height: 200
+      }
+    }
+  })}
+  <div className="profile">
+    <h1>I'm blue sometimes <span>👾</span></h1>
+  </div>
+  <div className="activity">
+    <div className="moment">Buy Beer</div>
+    <div className="moment">Add Server</div>
+    <div className="moment">Log In</div>
+  </div>
+</Style>
 ```
 
+Generates these styles
 
+```css
+  .css-vwt4h7 .profile,
+[data-css-vwt4h7] .profile {
+  color: green;
+  font-size: 48px;
+}
+
+.css-vwt4h7 .profile:hover,
+[data-css-vwt4h7] .profile:hover {
+  color: blue;
+}
+
+.css-vwt4h7 .profile > span,
+[data-css-vwt4h7] .profile > span {
+  font-size: 64px;
+  margin-left: auto;
+}
+
+.css-vwt4h7 .activity,
+[data-css-vwt4h7] .activity {
+  color: green;
+  display: -webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+}
+
+.css-vwt4h7 .activity .moment,
+[data-css-vwt4h7] .activity .moment {
+  color: rebeccapurple;
+  font-size: 18px;
+}
+
+@media (min-width: 400px) {
+  .css-vwt4h7 .moment,
+  [data-css-vwt4h7] .moment {
+    height: 200px;
+  }
+}
+
+```
+
+And this markup
+
+```html
+<noscript />
+<div className="profile" data-css-vwt4h7="">  
+  <h1>I'm blue sometimes <span>👾</span></h1>
+</div>
+<div className="activity" data-css-vwt4h7="">
+  <div className="moment">Buy Beer</div>
+  <div className="moment">Add Server</div>
+  <div className="moment">Log In</div>
+</div>
+
+```
