@@ -1,8 +1,124 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`cutest renders crazy stuff 1`] = `
+exports[`restyles renders crazy stuff 1`] = `
+.css-oypqrq,
+[data-css-oypqrq] {
+  color: blue;
+}
+
+.css-oypqrq .profile,
+[data-css-oypqrq] .profile {
+  color: red;
+}
+
+.css-oypqrq .profile .username,
+[data-css-oypqrq] .profile .username {
+  color: green;
+}
+
+.css-oypqrq .profile .username .three,
+[data-css-oypqrq] .profile .username .three {
+  color: gray;
+}
+
+.css-oypqrq .profile .username .three .inner,
+[data-css-oypqrq] .profile .username .three .inner {
+  color: rebeccapurple;
+  font-size: 20px;
+}
+
+.css-oypqrq:hover .one,
+[data-css-oypqrq]:hover .one {
+  color: blue;
+}
+
+.css-oypqrq:hover .one .two,
+[data-css-oypqrq]:hover .one .two {
+  color: gray;
+}
+
+.css-oypqrq:hover .one .two .three,
+[data-css-oypqrq]:hover .one .two .three {
+  color: black;
+}
+
+.css-oypqrq:hover .one .two .three .inner,
+[data-css-oypqrq]:hover .one .two .three .inner {
+  color: purple;
+  font-size: 20px;
+}
+
+.css-oypqrq:active .one,
+[data-css-oypqrq]:active .one {
+  color: blue;
+}
+
+.css-oypqrq:active .one .two,
+[data-css-oypqrq]:active .one .two {
+  color: gray;
+}
+
+.css-oypqrq:active .one .two .three,
+[data-css-oypqrq]:active .one .two .three {
+  color: black;
+}
+
+.css-oypqrq:active .one .two .three .inner,
+[data-css-oypqrq]:active .one .two .three .inner {
+  color: purple;
+  font-size: 20px;
+}
+
+.css-oypqrq:before .one,
+[data-css-oypqrq]:before .one {
+  color: blue;
+}
+
+.css-oypqrq:before .one .two,
+[data-css-oypqrq]:before .one .two {
+  color: gray;
+}
+
+.css-oypqrq:before .one .two .three,
+[data-css-oypqrq]:before .one .two .three {
+  color: black;
+}
+
+.css-oypqrq:before .one .two .three .inner,
+[data-css-oypqrq]:before .one .two .three .inner {
+  color: purple;
+  font-size: 20px;
+}
+
+@media (min-width: 500px) and (orientation: landscape) {
+  .css-oypqrq .one,
+  [data-css-oypqrq] .one {
+    color: blue;
+  }
+
+  .css-oypqrq .one .two,
+  [data-css-oypqrq] .one .two {
+    color: gray;
+  }
+
+  .css-oypqrq .one .two .three,
+  [data-css-oypqrq] .one .two .three {
+    color: black;
+  }
+
+  .css-oypqrq .one .two .three .inner,
+  [data-css-oypqrq] .one .two .three .inner {
+    color: purple;
+    font-size: 20px;
+  }
+}
+
 <div
-  data-css-oypqrq=""
+  className={
+    Object {
+      "data-css-oypqrq": "",
+    }
+  }
 >
   blue
   <div
@@ -27,39 +143,35 @@ exports[`cutest renders crazy stuff 1`] = `
 </div>
 `;
 
-exports[`cutest renders simple 1`] = `
+exports[`restyles renders elements with styles 1`] = `
+.css-epkc5v,
+[data-css-epkc5v] {
+  color: blue;
+}
+
+.css-epkc5v:hover,
+[data-css-epkc5v]:hover {
+  color: red;
+}
+
+.css-epkc5v .profile,
+[data-css-epkc5v] .profile {
+  color: green;
+  font-size: 20px;
+}
+
 <div
-  data-css-epkc5v=""
+  className={
+    Object {
+      "data-css-epkc5v": "",
+    }
+  }
 >
   This will be blue until hovered.
   <div
     className="profile"
   >
     This font size will be 20px
-  </div>
-</div>
-`;
-
-exports[`cutest use glamor helpers 1`] = `
-<div
-  data-css-snd14h=""
->
-  <div
-    className="one"
-  >
-    <div
-      className="two"
-    >
-      <div
-        className="three"
-      >
-        <span
-          className="inner"
-        >
-          test
-        </span>
-      </div>
-    </div>
   </div>
 </div>
 `;

@@ -1,11 +1,20 @@
 /* eslint-env jest */
+/* eslint-disable jsx-quotes */
 import React from 'react'
 import renderer from 'react-test-renderer'
+import {matcher, serializer} from 'jest-glamor-react'
 import Style from '../index'
 
-describe('cutest', () => {
-  test('renders simple', () => {
-    const props = { online: true }
+expect.addSnapshotSerializer(serializer)
+expect.extend(matcher)
+
+describe('restyles', () => {
+  test('renders elements with styles', () => {
+    const props = {
+      online: true,
+      theme: {radius: 5}
+    }
+
     const tree = renderer
       .create(
         <Style
@@ -20,8 +29,8 @@ describe('cutest', () => {
             }
           }}
         >
-          {rules => (
-            <div {...rules}>
+          {cls => (
+            <div className={cls}>
               This will be blue until hovered.
               <div className="profile">
                 This font size will be 20px
@@ -32,9 +41,8 @@ describe('cutest', () => {
       )
       .toJSON()
 
-    expect(tree).toMatchSnapshot()
+    expect(tree).toMatchSnapshotWithGlamor()
   })
-
 
   test('renders crazy stuff', () => {
     const tree = renderer
@@ -117,8 +125,8 @@ describe('cutest', () => {
             }
           }}
         >
-          {rules => (
-            <div {...rules}>
+          {cls => (
+            <div className={cls}>
               blue
               <div className={'profile'}>
                 red
@@ -135,65 +143,6 @@ describe('cutest', () => {
       )
       .toJSON()
 
-    expect(tree).toMatchSnapshot()
-  })
-
-  test('use glamor helpers', () => {
-    const tree = renderer
-      .create(
-        <Style
-          css={[
-            {color: 'lightgray'},
-            {height: '100vh'},
-            {
-              color: 'blue',
-              '&:hover': {
-                background: 'blue'
-              },
-              '& .one': {
-                color: 'red',
-                '& .two': {
-                  color: 'green',
-                  '& .three': {
-                    color: 'gray',
-                    '& .inner': {
-                      color: 'rebeccapurple',
-                      fontSize: 20
-                    }
-                  }
-                }
-              }
-            }
-          ]}
-        >
-          {[
-            rules => (
-              <div {...rules}>
-                <div className={'one'}>
-                  <div className={'two'}>
-                    <div className={'three'}>
-                      <span className={'inner'}>test</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            ),
-            rules => (
-              <div {...rules}>
-                <div className={'three'}>
-                  <div className={'two'}>
-                    <div className={'one'}>
-                      <span className={'inner'}>test</span>
-                    </div>
-                  </div>
-                </div>
-              </div>
-            )
-          ]}
-        </Style>
-      )
-      .toJSON()
-
-    expect(tree).toMatchSnapshot()
+    expect(tree).toMatchSnapshotWithGlamor()
   })
 })
