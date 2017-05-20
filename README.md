@@ -2,7 +2,7 @@
 
 Write styles scoped to your component and use standard css selectors to target children.
 
-*This is a thin wrapper around [glamor](https://github.com/threepointone/glamor).*
+*This is a thin wrapper around [cxs](https://github.com/jxnblk/cxs).*
 
 [![npm version](https://badge.fury.io/js/restyles.svg)](https://badge.fury.io/js/restyles)
 [![Build Status](https://travis-ci.org/tkh44/restyles.svg?branch=master)](https://travis-ci.org/tkh44/restyles)
