@@ -24,12 +24,15 @@ const Profile = (props) => (
   <Style
     css={{
       color: 'blue',
-      '&:hover': {
+      ':hover': {
         color: 'red'
       },
-      '& .profile': {
+      ' .profile': {
         color: props.online ? 'green' : 'gray',
-        fontSize: 20
+        fontSize: 20,
+        '@media (min-width: 768px)': {
+          color: 'aquamarine'
+        }
       }
     }}
   >
@@ -49,40 +52,40 @@ const Profile = (props) => (
 
 **css** `object|array<object>`
 
-Your css as an object. This is passed straight through to glamor.
+Your css as an object. This is passed straight through to cxs.
 
-*[glamor css docs](https://github.com/threepointone/glamor/blob/master/docs/api.md#cssrules)*
+*[cxs docs](https://github.com/jxnblk/cxs/blob/master/README.md)*
 
 ```jsx
 const Profile = (props) => (
   <Style
     css={{
      color: 'blue',
-     '& .profile': {
+     ' .profile': {
        color: 'red',
-       '& .username': {
+       ' .username': {
          color: 'green',
-         '& .three': {
+         ' .three': {
            color: 'gray',
-           '& .inner': {
+           ' .inner': {
              color: 'rebeccapurple',
              fontSize: 20
            }
          }
        }
      },
-     '&:hover': {
-       '& .three': {
+     ':hover': {
+       ' .three': {
          color: 'black'
        }
      },
-     '&:active': {
-       '& .inner': {
+     ':active': {
+       ' .inner': {
          color: 'purple',
          fontSize: 20
        }
      },
-     '&:before': {
+     ':before': {
        content: '" "',
        position: 'absolute',
        top: 0,
@@ -92,7 +95,7 @@ const Profile = (props) => (
        backgroundColor: 'blue'
      },
      '@media (min-width: 500px) and (orientation: landscape)': {
-       '& .inner': {
+       ' .inner': {
          color: 'purple',
          fontSize: 48
        }

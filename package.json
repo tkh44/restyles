@@ -21,7 +21,7 @@
     "release": "npm run test && npm run build && npm version patch && npm publish && git push --tags"
   },
   "dependencies": {
-    "glamor": "^2.20.25"
+    "cxs": "^3.0.4"
   },
   "peerDependencies": {
     "react": ">=14"

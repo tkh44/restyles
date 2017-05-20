@@ -1,9 +1,9 @@
 import {Children} from 'react'
 import PropTypes from 'prop-types'
-import { css as magic } from 'glamor'
+import cxs from 'cxs'
 
 export default function Style ({children, css}) {
-  return Children.only(children(magic(css)))
+  return Children.only(children(cxs(css)))
 }
 
 Style.propTypes = {

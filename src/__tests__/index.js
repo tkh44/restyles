@@ -20,10 +20,10 @@ describe('restyles', () => {
         <Style
           css={{
             color: 'blue',
-            '&:hover': {
+            ':hover': {
               color: 'red'
             },
-            '& .profile': {
+            ' .profile': {
               color: props.online ? 'green' : 'gray',
               fontSize: 20
             }
@@ -50,27 +50,27 @@ describe('restyles', () => {
         <Style
           css={{
             color: 'blue',
-            '& .profile': {
+            ' .profile': {
               color: 'red',
-              '& .username': {
+              ' .username': {
                 color: 'green',
-                '& .three': {
+                ' .three': {
                   color: 'gray',
-                  '& .inner': {
+                  ' .inner': {
                     color: 'rebeccapurple',
                     fontSize: 20
                   }
                 }
               }
             },
-            '&:hover': {
-              '& .one': {
+            ':hover': {
+              ' .one': {
                 color: 'blue',
-                '& .two': {
+                ' .two': {
                   color: 'gray',
-                  '& .three': {
+                  ' .three': {
                     color: 'black',
-                    '& .inner': {
+                    ' .inner': {
                       color: 'purple',
                       fontSize: 20
                     }
@@ -78,14 +78,14 @@ describe('restyles', () => {
                 }
               }
             },
-            '&:active': {
-              '& .one': {
+            ':active': {
+              ' .one': {
                 color: 'blue',
-                '& .two': {
+                ' .two': {
                   color: 'gray',
-                  '& .three': {
+                  ' .three': {
                     color: 'black',
-                    '& .inner': {
+                    ' .inner': {
                       color: 'purple',
                       fontSize: 20
                     }
@@ -93,14 +93,14 @@ describe('restyles', () => {
                 }
               }
             },
-            '&:before': {
-              '& .one': {
+            ':before': {
+              ' .one': {
                 color: 'blue',
-                '& .two': {
+                ' .two': {
                   color: 'gray',
-                  '& .three': {
+                  ' .three': {
                     color: 'black',
-                    '& .inner': {
+                    ' .inner': {
                       color: 'purple',
                       fontSize: 20
                     }
@@ -109,13 +109,13 @@ describe('restyles', () => {
               }
             },
             '@media (min-width: 500px) and (orientation: landscape)': {
-              '& .one': {
+              ' .one': {
                 color: 'blue',
-                '& .two': {
+                ' .two': {
                   color: 'gray',
-                  '& .three': {
+                  ' .three': {
                     color: 'black',
-                    '& .inner': {
+                    ' .inner': {
                       color: 'purple',
                       fontSize: 20
                     }

@@ -1,124 +1,122 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`restyles renders crazy stuff 1`] = `
-.css-oypqrq,
-[data-css-oypqrq] {
+.c-blue {
   color: blue;
 }
 
-.css-oypqrq .profile,
-[data-css-oypqrq] .profile {
+.__pprofile-c-red  .profile {
   color: red;
 }
 
-.css-oypqrq .profile .username,
-[data-css-oypqrq] .profile .username {
+._1yp8db4  .profile  .username {
   color: green;
 }
 
-.css-oypqrq .profile .username .three,
-[data-css-oypqrq] .profile .username .three {
+._pczu08  .profile  .username  .three {
   color: gray;
 }
 
-.css-oypqrq .profile .username .three .inner,
-[data-css-oypqrq] .profile .username .three .inner {
+._nfl9mc  .profile  .username  .three  .inner {
   color: rebeccapurple;
+}
+
+._1q1tm5b  .profile  .username  .three  .inner {
   font-size: 20px;
 }
 
-.css-oypqrq:hover .one,
-[data-css-oypqrq]:hover .one {
+._hover__pone-c-blue:hover  .one {
   color: blue;
 }
 
-.css-oypqrq:hover .one .two,
-[data-css-oypqrq]:hover .one .two {
+._1plqem2:hover  .one  .two {
   color: gray;
 }
 
-.css-oypqrq:hover .one .two .three,
-[data-css-oypqrq]:hover .one .two .three {
+._1idc1ym:hover  .one  .two  .three {
   color: black;
 }
 
-.css-oypqrq:hover .one .two .three .inner,
-[data-css-oypqrq]:hover .one .two .three .inner {
+._bp7izt:hover  .one  .two  .three  .inner {
   color: purple;
+}
+
+._sahbn7:hover  .one  .two  .three  .inner {
   font-size: 20px;
 }
 
-.css-oypqrq:active .one,
-[data-css-oypqrq]:active .one {
+._active__pone-c-blue:active  .one {
   color: blue;
 }
 
-.css-oypqrq:active .one .two,
-[data-css-oypqrq]:active .one .two {
+._5oxw7k:active  .one  .two {
   color: gray;
 }
 
-.css-oypqrq:active .one .two .three,
-[data-css-oypqrq]:active .one .two .three {
+._1jduipw:active  .one  .two  .three {
   color: black;
 }
 
-.css-oypqrq:active .one .two .three .inner,
-[data-css-oypqrq]:active .one .two .three .inner {
+._14tsqoz:active  .one  .two  .three  .inner {
   color: purple;
+}
+
+._8n05kp:active  .one  .two  .three  .inner {
   font-size: 20px;
 }
 
-.css-oypqrq:before .one,
-[data-css-oypqrq]:before .one {
+._before__pone-c-blue:before  .one {
   color: blue;
 }
 
-.css-oypqrq:before .one .two,
-[data-css-oypqrq]:before .one .two {
+._86dbmt:before  .one  .two {
   color: gray;
 }
 
-.css-oypqrq:before .one .two .three,
-[data-css-oypqrq]:before .one .two .three {
+._1gtudkh:before  .one  .two  .three {
   color: black;
 }
 
-.css-oypqrq:before .one .two .three .inner,
-[data-css-oypqrq]:before .one .two .three .inner {
+._177n1w6:before  .one  .two  .three  .inner {
   color: purple;
+}
+
+._b9qsss:before  .one  .two  .three  .inner {
   font-size: 20px;
 }
 
 @media (min-width: 500px) and (orientation: landscape) {
-  .css-oypqrq .one,
-  [data-css-oypqrq] .one {
+  ._4b7p1m  .one {
     color: blue;
   }
+}
 
-  .css-oypqrq .one .two,
-  [data-css-oypqrq] .one .two {
+@media (min-width: 500px) and (orientation: landscape) {
+  ._eulomd  .one  .two {
     color: gray;
   }
+}
 
-  .css-oypqrq .one .two .three,
-  [data-css-oypqrq] .one .two .three {
+@media (min-width: 500px) and (orientation: landscape) {
+  ._2w2ir5  .one  .two  .three {
     color: black;
   }
+}
 
-  .css-oypqrq .one .two .three .inner,
-  [data-css-oypqrq] .one .two .three .inner {
+@media (min-width: 500px) and (orientation: landscape) {
+  ._13s6nna  .one  .two  .three  .inner {
     color: purple;
+  }
+}
+
+@media (min-width: 500px) and (orientation: landscape) {
+  ._ixb23w  .one  .two  .three  .inner {
     font-size: 20px;
   }
 }
 
 <div
-  className={
-    Object {
-      "data-css-oypqrq": "",
-    }
-  }
+  className="c-blue __pprofile-c-red _1yp8db4 _pczu08 _nfl9mc _1q1tm5b _hover__pone-c-blue _1plqem2 _1idc1ym _bp7izt _sahbn7 _active__pone-c-blue _5oxw7k _1jduipw _14tsqoz _8n05kp _before__pone-c-blue _86dbmt _1gtudkh _177n1w6 _b9qsss _4b7p1m _eulomd _2w2ir5 _13s6nna _ixb23w"
 >
   blue
   <div
@@ -144,28 +142,24 @@ exports[`restyles renders crazy stuff 1`] = `
 `;
 
 exports[`restyles renders elements with styles 1`] = `
-.css-epkc5v,
-[data-css-epkc5v] {
+.c-blue {
   color: blue;
 }
 
-.css-epkc5v:hover,
-[data-css-epkc5v]:hover {
+._hover-c-red:hover {
   color: red;
 }
 
-.css-epkc5v .profile,
-[data-css-epkc5v] .profile {
+.__pprofile-c-green  .profile {
   color: green;
+}
+
+.__pprofile-fs-20  .profile {
   font-size: 20px;
 }
 
 <div
-  className={
-    Object {
-      "data-css-epkc5v": "",
-    }
-  }
+  className="c-blue _hover-c-red __pprofile-c-green __pprofile-fs-20"
 >
   This will be blue until hovered.
   <div
