@@ -19,7 +19,7 @@ npm install -S restyles
 ```
 
 ## Basic Usage
-```jsx harmony
+```jsx
 const Profile = (props) => (
   <Style
     css={{
