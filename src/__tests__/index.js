@@ -23,7 +23,7 @@ describe('restyles', () => {
             ':hover': {
               color: 'red'
             },
-            ' .profile': {
+            '.profile': {
               color: props.online ? 'green' : 'gray',
               fontSize: 20
             }

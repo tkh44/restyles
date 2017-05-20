@@ -150,16 +150,16 @@ exports[`restyles renders elements with styles 1`] = `
   color: red;
 }
 
-.__pprofile-c-green  .profile {
+._pprofile-c-green .profile {
   color: green;
 }
 
-.__pprofile-fs-20  .profile {
+._pprofile-fs-20 .profile {
   font-size: 20px;
 }
 
 <div
-  className="c-blue _hover-c-red __pprofile-c-green __pprofile-fs-20"
+  className="c-blue _hover-c-red _pprofile-c-green _pprofile-fs-20"
 >
   This will be blue until hovered.
   <div
