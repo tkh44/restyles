@@ -1,6 +1,6 @@
 {
   "name": "restyles",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "cssinjss",
   "jsnext:main": "dist/restyles.es.js",
   "module": "dist/restyles.es.js",
