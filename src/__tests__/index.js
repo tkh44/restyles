@@ -28,8 +28,7 @@ describe('restyles', () => {
               fontSize: 20
             }
           }}
-        >
-          {cls => (
+          render={cls => (
             <div className={cls}>
               This will be blue until hovered.
               <div className="profile">
@@ -37,7 +36,7 @@ describe('restyles', () => {
               </div>
             </div>
           )}
-        </Style>
+        />
       )
       .toJSON()
 
