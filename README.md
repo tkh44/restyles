@@ -49,18 +49,18 @@ const Profile = props => (
 
 ## Props
 
-**children** `fn`
-
-**`render` takes precedence over `children`**
+#### children `fn`
 
 Function to render your children. Its only argument is a class name that you can apply to an element of your choice. 
 Usually this is the outermost element(s) of your children.
+
+**`render` takes precedence over `children`**
 
 *use `render` for better performance* 
 
 
 
-**css** `object|array<object>`
+#### css `object|array<object>`
 
 Your css as an object. This is passed straight through to cxs.
 
@@ -130,12 +130,15 @@ const Profile = props => (
 ```
 
 
-**render** `fn`
+
+#### render `fn`
 
 **takes precedence over `children`**
 
+
 Function to render your children. Its only argument is a class name that you can apply to an element of your choice. 
 Usually this is the outermost element(s) of your children.
+
 
 ```jsx
 const Greeting = ({ name }) => (
