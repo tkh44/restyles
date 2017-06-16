@@ -1,3 +1,3 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`restyles renders preact elements with styles 1`] = `"<div class=\\"c-preact-purple _hover-c-red _ppreact-c-green _ppreact-fs-20\\">This will be preact-purple until hovered.<div class=\\"profile\\">This font size will be 20px</div></div>"`;
+exports[`restyles renders preact elements with styles 1`] = `"<div class=\\"css-vmubhh\\">This will be preact-purple until hovered.<div class=\\"profile\\">This font size will be 20px</div></div>"`;

@@ -1,8 +1,120 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`restyles renders crazy stuff 1`] = `
+.css-oypqrq,
+[data-css-oypqrq] {
+  color: blue;
+}
+
+.css-oypqrq .profile,
+[data-css-oypqrq] .profile {
+  color: red;
+}
+
+.css-oypqrq .profile .username,
+[data-css-oypqrq] .profile .username {
+  color: green;
+}
+
+.css-oypqrq .profile .username .three,
+[data-css-oypqrq] .profile .username .three {
+  color: gray;
+}
+
+.css-oypqrq .profile .username .three .inner,
+[data-css-oypqrq] .profile .username .three .inner {
+  color: rebeccapurple;
+  font-size: 20px;
+}
+
+.css-oypqrq:hover .one,
+[data-css-oypqrq]:hover .one {
+  color: blue;
+}
+
+.css-oypqrq:hover .one .two,
+[data-css-oypqrq]:hover .one .two {
+  color: gray;
+}
+
+.css-oypqrq:hover .one .two .three,
+[data-css-oypqrq]:hover .one .two .three {
+  color: black;
+}
+
+.css-oypqrq:hover .one .two .three .inner,
+[data-css-oypqrq]:hover .one .two .three .inner {
+  color: purple;
+  font-size: 20px;
+}
+
+.css-oypqrq:active .one,
+[data-css-oypqrq]:active .one {
+  color: blue;
+}
+
+.css-oypqrq:active .one .two,
+[data-css-oypqrq]:active .one .two {
+  color: gray;
+}
+
+.css-oypqrq:active .one .two .three,
+[data-css-oypqrq]:active .one .two .three {
+  color: black;
+}
+
+.css-oypqrq:active .one .two .three .inner,
+[data-css-oypqrq]:active .one .two .three .inner {
+  color: purple;
+  font-size: 20px;
+}
+
+.css-oypqrq:before .one,
+[data-css-oypqrq]:before .one {
+  color: blue;
+}
+
+.css-oypqrq:before .one .two,
+[data-css-oypqrq]:before .one .two {
+  color: gray;
+}
+
+.css-oypqrq:before .one .two .three,
+[data-css-oypqrq]:before .one .two .three {
+  color: black;
+}
+
+.css-oypqrq:before .one .two .three .inner,
+[data-css-oypqrq]:before .one .two .three .inner {
+  color: purple;
+  font-size: 20px;
+}
+
+@media (min-width: 500px) and (orientation: landscape) {
+  .css-oypqrq .one,
+  [data-css-oypqrq] .one {
+    color: blue;
+  }
+
+  .css-oypqrq .one .two,
+  [data-css-oypqrq] .one .two {
+    color: gray;
+  }
+
+  .css-oypqrq .one .two .three,
+  [data-css-oypqrq] .one .two .three {
+    color: black;
+  }
+
+  .css-oypqrq .one .two .three .inner,
+  [data-css-oypqrq] .one .two .three .inner {
+    color: purple;
+    font-size: 20px;
+  }
+}
+
 <div
-  className="c-blue __pprofile-c-red _1yp8db4 _pczu08 _nfl9mc _1q1tm5b _hover__pone-c-blue _1plqem2 _1idc1ym _bp7izt _sahbn7 _active__pone-c-blue _5oxw7k _1jduipw _14tsqoz _8n05kp _before__pone-c-blue _86dbmt _1gtudkh _177n1w6 _b9qsss _4b7p1m _eulomd _2w2ir5 _13s6nna _ixb23w"
+  className="css-oypqrq"
 >
   blue
   <div
@@ -28,8 +140,18 @@ exports[`restyles renders crazy stuff 1`] = `
 `;
 
 exports[`restyles renders elements with styles 1`] = `
+.css-sr4kbe,
+[data-css-sr4kbe] {
+  color: blue;
+}
+
+.css-sr4kbe:hover,
+[data-css-sr4kbe]:hover {
+  color: red;
+}
+
 <div
-  className="c-blue _hover-c-red _pprofile-c-green _pprofile-fs-20"
+  className="css-sr4kbe"
 >
   This will be blue until hovered.
   <div

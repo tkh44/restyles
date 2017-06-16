@@ -1,8 +1,11 @@
 # restyles
 
-Write styles scoped to your component and use standard css selectors to target children.
+**Declarative [glamor](https://github.com/threepointone/glamor)** 
 
-*This is a thin wrapper around [cxs](https://github.com/jxnblk/cxs).*
+
+Write styles scoped to your component and use standard css selectors to target children.
+Due to its tiny size, restyles makes the perfect companion for [glamorous](https://github.com/paypal/glamorous).
+
 
 [![npm version](https://badge.fury.io/js/restyles.svg)](https://badge.fury.io/js/restyles)
 [![Build Status](https://travis-ci.org/tkh44/restyles.svg?branch=master)](https://travis-ci.org/tkh44/restyles)
@@ -64,7 +67,7 @@ Usually this is the outermost element(s) of your children.
 
 Your css as an object. This is passed straight through to cxs.
 
-*[cxs docs](https://github.com/jxnblk/cxs/blob/master/README.md)*
+*[glamor docs](https://github.com/threepointone/glamor/blob/master/README.md)*
 
 ```jsx
 const Profile = props => (
