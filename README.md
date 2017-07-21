@@ -30,7 +30,7 @@ const Profile = props => (
       ':hover': {
         color: 'red'
       },
-      '.profile': {
+      '& .profile': {
         color: props.online ? 'green' : 'gray',
         fontSize: 20,
         '@media (min-width: 768px)': {
@@ -74,13 +74,13 @@ const Profile = props => (
   <Style
     css={{
       color: 'blue',
-      '.profile': {
+      '& .profile': {
         color: 'red',
-        '.username': {
+        '& .username': {
           color: 'green',
-          '.three': {
+          '& .three': {
             color: 'gray',
-            '.inner': {
+            '& .inner': {
               color: 'rebeccapurple',
               fontSize: 20
             }
@@ -88,12 +88,12 @@ const Profile = props => (
         }
       },
       ':hover': {
-        '.three': {
+        '& .three': {
           color: 'black'
         }
       },
       ':active': {
-        '.inner': {
+        '& .inner': {
           color: 'purple',
           fontSize: 20
         }
@@ -108,7 +108,7 @@ const Profile = props => (
         backgroundColor: 'blue'
       },
       '@media (min-width: 500px) and (orientation: landscape)': {
-        '.inner': {
+        '& .inner': {
           color: 'purple',
           fontSize: 48
         }
