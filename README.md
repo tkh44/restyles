@@ -159,3 +159,48 @@ const Greeting = ({ name }) => (
 )
 
 ```
+
+### children `fn|array<fn>`
+
+Function to render the first child of the parent component's children. Its only argument is `props.children` which
+can be a function or an array of functions.
+
+```jsx
+
+const Name = ({cls}) => (
+  <div className={cls}>
+    My name //text will be red
+    <div className={'name'}>
+      Victor //text will be blue
+    </div>
+  </div>
+)
+
+const Profile = props => {
+  return (
+    <div>
+      Profile
+      <Style
+        css={{
+          color: 'red',
+          '& .name': {
+            color: 'blue',
+          }
+        }}
+        children={props.children}
+      />
+    </div>
+  )
+}
+
+class App extends Component {
+  render() {
+    return (
+      <Profile>
+       {(cls) => <Name cls={cls}/>} // only this component will be rendered 
+       {() => <Name/>}
+      </Profile>
+    )
+  }
+}
+```
