@@ -1,23 +1,38 @@
 import React from 'react'
-import {css as magic} from 'glamor'
+import { css } from 'emotion'
 
-function Ns () {
-  return <noscript />
+function childIsClassName (child) {
+  return typeof child === 'string' && child.indexOf('css-') === 0
 }
 
-export function css (...styles) {
-  return <Ns __css={styles} />
-}
+function cloneChildWithClassNames (child, cssClass) {
+  if (childIsClassName(child)) {
+    return <noscript />
+  }
 
-function cloneChildWithClassNames (child, styles) {
-  return React.cloneElement(child, magic(styles))
+  return React.cloneElement(child, {
+    className: cssClass
+  })
 }
 
 export default class Style extends React.Component {
   render () {
-    const {children} = this.props
+    const { children, className } = this.props
     const childrenArray = React.Children.toArray(children)
-    let styles = childrenArray.map(child => child.props.__css)
-    return childrenArray.map(child => cloneChildWithClassNames(child, styles))
+    let cssClass = css(
+      childrenArray
+        .map(child => {
+          if (childIsClassName(child)) {
+            return child
+          }
+
+          if (child.props && child.props.className) {
+            return child.props.className
+          }
+        })
+        .filter(Boolean).concat([className])
+    )
+
+    return childrenArray.map(child => cloneChildWithClassNames(child, cssClass))
   }
 }

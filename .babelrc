@@ -21,7 +21,11 @@
         ],
         "stage-2",
         "react"
+      ],
+      "plugins": [
+        "emotion/babel"
       ]
     }
-  }
+  },
+  "plugins": ["babel-macros"]
 }
